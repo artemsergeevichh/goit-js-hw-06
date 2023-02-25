@@ -13,9 +13,21 @@ const images = [
   },
 ];
 
-const galleryEl = document.querySelector('.gallery')
-const galleryItemEl = images.map(element => { return `<li class = image> <img src= ${element.url} alt= ${element.alt}
-width = 300px, height = 200px>
-</li>`
-});
-galleryEl.insertAdjacentHTML('beforeend', galleryItemEl.join(''));
+//new
+const gallery = document.querySelector('.gallery');
+
+const galleryEl = images.map(image => 
+  `<li><img src = ${image.url}, alt = ${image.alt} 
+  width = 300px, height = 200px ></li>`
+);
+
+gallery.insertAdjacentHTML('afterbegin', galleryEl.join(''));
+
+
+//accepted
+// const galleryEl = document.querySelector('.gallery')
+// const galleryItemEl = images.map(element => { return `<li class = image> <img src= ${element.url} alt= ${element.alt}
+// width = 300px, height = 200px>
+// </li>`
+// });
+// galleryEl.insertAdjacentHTML('beforeend', galleryItemEl.join(''));
